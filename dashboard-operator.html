@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Operator Panel</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body>
+<!-- ADD just inside body (top) -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+<div class="sidebar" id="sidebar">
+<div class="logo-box">
+    <img src="assets/images/logo.png" class="logo">
+    <h3 class="brand">MOS AGENCY</h3>
+</div>
+    <h2>OPERATOR</h2>
+
+<ul>
+<li onclick="show('dashboard')">Dashboard</li>
+
+<li onclick="show('pan')">PAN Card Services</li>
+<li onclick="show('aadhaar')">Aadhaar Services</li>
+<li onclick="show('voter')">Voter Card Services</li>
+<li onclick="show('samagra')">Samagra ID Services</li>
+
+<li onclick="show('profile')">Profile Settings</li>
+
+<li onclick="logout()">Logout</li>
+</ul>
+</div>
+
+<div class="main" id="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+<h2>Operator Dashboard</h2>
+
+<div class="cards">
+<div class="card">New Requests</div>
+<div class="card">Pending</div>
+<div class="card">Completed</div>
+</div>
+</div>
+
+<!-- PAN SERVICES -->
+<div id="pan" class="section">
+<h2>PAN Card Services</h2>
+
+<button onclick="req('New PAN Apply')">New PAN Card Apply</button>
+<button onclick="req('PAN Correction')">PAN Correction / Update</button>
+<button onclick="req('Lost PAN Reprint')">Lost PAN Reprint</button>
+<button onclick="req('ePAN Download')">e-PAN Download</button>
+<button onclick="req('PAN Status Check')">PAN Status Check</button>
+</div>
+
+<!-- AADHAAR SERVICES -->
+<div id="aadhaar" class="section">
+<h2>Aadhaar Services</h2>
+
+<button onclick="req('Aadhaar Update Check')">Update Request Check</button>
+<button onclick="req('PVC Card Apply')">PVC Card Apply</button>
+<button onclick="req('Bank Seeding Status')">Bank Seeding Status</button>
+<button onclick="req('New Aadhaar Registration')">New Registration</button>
+<button onclick="req('VID Correction')">VID Correction</button>
+<button onclick="req('Address Services')">Address Related Services</button>
+<button onclick="req('Replacement Services')">Replacement Services</button>
+<button onclick="req('Status Tracking')">Status & Tracking</button>
+<button onclick="req('Download Print')">Download & Print</button>
+</div>
+
+<!-- VOTER SERVICES -->
+<div id="voter" class="section">
+<h2>Voter Card Services</h2>
+
+<button onclick="req('New Voter Registration')">New Registration</button>
+<button onclick="req('Voter ID Correction')">Voter ID Correction</button>
+<button onclick="req('Address Change')">Address Change</button>
+<button onclick="req('Voter Delete')">Voter Card Deletion</button>
+<button onclick="req('Replacement')">Replacement Services</button>
+<button onclick="req('Tracking')">Status & Tracking</button>
+<button onclick="req('Download')">Download & Print</button>
+</div>
+
+<!-- SAMAGRA -->
+<div id="samagra" class="section">
+<h2>Samagra ID Services</h2>
+
+<button onclick="req('New Family Registration')">New Family Registration</button>
+<button onclick="req('New Member Registration')">New Member Registration</button>
+
+<button onclick="req('Name Correction')">Name Correction</button>
+<button onclick="req('DOB Correction')">Date of Birth Correction</button>
+<button onclick="req('Gender Correction')">Gender Correction</button>
+<button onclick="req('Address Update')">Address Update</button>
+<button onclick="req('Mobile Update')">Mobile Update</button>
+<button onclick="req('Aadhaar Update')">Aadhaar Number Update</button>
+<button onclick="req('Bank Update')">Bank Account Update</button>
+
+<button onclick="req('Samagra Search')">Search & Download</button>
+<button onclick="req('Family ID Download')">Family ID Download</button>
+<button onclick="req('Member ID Download')">Member ID Download</button>
+
+<button onclick="req('Add Member')">Add Member</button>
+<button onclick="req('Remove Member')">Remove Member</button>
+<button onclick="req('Transfer Member')">Transfer Member</button>
+<button onclick="req('Split Family')">Split Family ID</button>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="section">
+<h2>Profile Settings</h2>
+
+<button>Upload Photo</button>
+<button>Change Password</button>
+<button>KYC Status</button>
+</div>
+
+<!-- FORM MODAL -->
+<div id="formModal" class="modal">
+    <div class="modal-box">
+
+        <h3 id="formTitle"></h3>
+
+        <!-- dynamic fields -->
+        <div id="formFields"></div>
+
+        <button onclick="submitForm()">Submit</button>
+        <button onclick="closeForm()">Cancel</button>
+
+    </div>
+</div>
+
+</div>
+
+<script src="assets/js/operator-panel.js"></script>
+</body>
+</html>

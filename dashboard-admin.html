@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body>
+<!-- ADD just inside body (top) -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+<div class="sidebar" id="sidebar">
+<div class="logo-box">
+    <img src="assets/images/logo.png" class="logo">
+    <h3 class="brand">MOS AGENCY</h3>
+</div>
+<h2>ADMIN</h2>
+
+<ul>
+<li onclick="show('dashboard')">Dashboard</li>
+
+<li onclick="show('user')">User Management</li>
+<li onclick="show('service')">Service Management</li>
+<li onclick="show('request')">Request Management</li>
+<li onclick="show('settings')">Settings</li>
+<li onclick="show('backup')">Backup & Data</li>
+<li onclick="show('report')">Reports</li>
+
+<li onclick="logout()">Logout</li>
+</ul>
+
+</div>
+
+<div class="main" id="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+<h2>Admin Dashboard</h2>
+</div>
+
+<!-- USER MANAGEMENT -->
+<div id="user" class="section">
+<h2>User Management</h2>
+
+<button onclick="createOperator()">Add Operator</button>
+<button>Role Assign</button>
+<button>Login Activity</button>
+
+<ul id="opList"></ul>
+</div>
+
+<!-- SERVICE MANAGEMENT -->
+<div id="service" class="section">
+<h2>Service Management</h2>
+
+<button onclick="addService()">New Service</button>
+<button>Service Edit/Delete</button>
+<button>Category Manage</button>
+<button>Document List</button>
+<button>Price / Commission</button>
+
+<ul id="serviceList"></ul>
+</div>
+
+<!-- REQUEST MANAGEMENT -->
+<div id="request" class="section">
+<h2>Request Management</h2>
+
+<button onclick="filterStatus('All')">All</button>
+<button onclick="filterStatus('Pending')">Pending</button>
+<button onclick="filterStatus('Approved')">Approved</button>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Service</th>
+<th>Name</th>
+<th>Operator</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="data"></tbody>
+</table>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings" class="section">
+<h2>Settings / Configuration</h2>
+
+<button>Portal Branding</button>
+<button>Service Charges</button>
+<button>API Keys</button>
+</div>
+
+<!-- BACKUP -->
+<div id="backup" class="section">
+<h2>Backup & Data Control</h2>
+
+<button onclick="backup()">Database Backup</button>
+<button onclick="restore()">Restore</button>
+<button onclick="exportCSV()">Export CSV</button>
+</div>
+
+<!-- REPORT -->
+<div id="report" class="section">
+<h2>Reports</h2>
+
+<button onclick="serviceReport()">Service Report</button>
+<button onclick="dailyReport()">Daily Report</button>
+</div>
+
+</div>
+
+<script src="assets/js/admin-panel.js"></script>
+</body>
+</html>
